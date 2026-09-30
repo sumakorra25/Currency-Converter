@@ -1,0 +1,216 @@
+{
+  "info": {
+    "name": "Currency Flow API",
+    "description": "Postman requests for all 17 Currency Flow APIs.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:5000"
+    },
+    {
+      "key": "token",
+      "value": ""
+    },
+    {
+      "key": "conversionId",
+      "value": "507f1f77bcf86cd799439011"
+    },
+    {
+      "key": "pairId",
+      "value": "507f1f77bcf86cd799439011"
+    }
+  ],
+  "item": [
+    {
+      "name": "API 1 - Register",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Asha Kumar\",\n  \"email\": \"asha@example.com\",\n  \"password\": \"secret123\"\n}"
+        },
+        "url": "{{baseUrl}}/api/auth/register"
+      }
+    },
+    {
+      "name": "API 2 - Login",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"email\": \"asha@example.com\",\n  \"password\": \"secret123\"\n}"
+        },
+        "url": "{{baseUrl}}/api/auth/login"
+      }
+    },
+    {
+      "name": "API 3 - Current User",
+      "request": {
+        "method": "GET",
+        "header": [
+          { "key": "Authorization", "value": "Bearer {{token}}" }
+        ],
+        "url": "{{baseUrl}}/api/auth/me"
+      }
+    },
+    {
+      "name": "API 4 - Create Conversion",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Authorization", "value": "Bearer {{token}}" },
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"from\": \"INR\",\n  \"to\": \"USD\",\n  \"amount\": 1000\n}"
+        },
+        "url": "{{baseUrl}}/api/conversions"
+      }
+    },
+    {
+      "name": "API 5 - List Conversions",
+      "request": {
+        "method": "GET",
+        "header": [
+          { "key": "Authorization", "value": "Bearer {{token}}" }
+        ],
+        "url": "{{baseUrl}}/api/conversions?page=1&limit=10"
+      }
+    },
+    {
+      "name": "API 6 - Get Conversion",
+      "request": {
+        "method": "GET",
+        "header": [
+          { "key": "Authorization", "value": "Bearer {{token}}" }
+        ],
+        "url": "{{baseUrl}}/api/conversions/{{conversionId}}"
+      }
+    },
+    {
+      "name": "API 7 - Update Conversion",
+      "request": {
+        "method": "PUT",
+        "header": [
+          { "key": "Authorization", "value": "Bearer {{token}}" },
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"amount\": 1500\n}"
+        },
+        "url": "{{baseUrl}}/api/conversions/{{conversionId}}"
+      }
+    },
+    {
+      "name": "API 8 - Delete Conversion",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          { "key": "Authorization", "value": "Bearer {{token}}" }
+        ],
+        "url": "{{baseUrl}}/api/conversions/{{conversionId}}"
+      }
+    },
+    {
+      "name": "API 9 - Create Favourite Pair",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Authorization", "value": "Bearer {{token}}" },
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"from\": \"INR\",\n  \"to\": \"USD\"\n}"
+        },
+        "url": "{{baseUrl}}/api/pairs"
+      }
+    },
+    {
+      "name": "API 10 - List Favourite Pairs",
+      "request": {
+        "method": "GET",
+        "header": [
+          { "key": "Authorization", "value": "Bearer {{token}}" }
+        ],
+        "url": "{{baseUrl}}/api/pairs?page=1&limit=10"
+      }
+    },
+    {
+      "name": "API 11 - Get Favourite Pair",
+      "request": {
+        "method": "GET",
+        "header": [
+          { "key": "Authorization", "value": "Bearer {{token}}" }
+        ],
+        "url": "{{baseUrl}}/api/pairs/{{pairId}}"
+      }
+    },
+    {
+      "name": "API 12 - Update Favourite Pair",
+      "request": {
+        "method": "PUT",
+        "header": [
+          { "key": "Authorization", "value": "Bearer {{token}}" },
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"to\": \"EUR\"\n}"
+        },
+        "url": "{{baseUrl}}/api/pairs/{{pairId}}"
+      }
+    },
+    {
+      "name": "API 13 - Delete Favourite Pair",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          { "key": "Authorization", "value": "Bearer {{token}}" }
+        ],
+        "url": "{{baseUrl}}/api/pairs/{{pairId}}"
+      }
+    },
+    {
+      "name": "API 14 - Latest Rates",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/rates/latest?base=INR"
+      }
+    },
+    {
+      "name": "API 15 - Convert Amount",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/convert?from=INR&to=USD&amount=1000"
+      }
+    },
+    {
+      "name": "API 16 - Supported Currencies",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/currencies"
+      }
+    },
+    {
+      "name": "API 17 - Conversion Stats",
+      "request": {
+        "method": "GET",
+        "header": [
+          { "key": "Authorization", "value": "Bearer {{token}}" }
+        ],
+        "url": "{{baseUrl}}/api/conversions/stats"
+      }
+    }
+  ]
+}

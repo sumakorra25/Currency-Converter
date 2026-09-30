@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Currency Flow</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <div class="brand">
+          <div class="brand-mark">CF</div>
+          <div>
+            <p class="eyebrow">Live Rates</p>
+            <h1>Currency Flow</h1>
+          </div>
+        </div>
+        <a href="#converter" class="primary-btn">Convert Now</a>
+      </header>
+
+      <main class="content">
+        <section class="hero">
+          <div class="hero-copy">
+            <span class="badge">Trusted exchange tool</span>
+            <h2>Convert currencies in real time with confidence.</h2>
+            <p>
+              Check live FX rates, compare supported currencies, and create an account to start saving
+              conversion history.
+            </p>
+            <div class="hero-stats">
+              <div>
+                <strong>30+</strong>
+                <span>Supported currencies</span>
+              </div>
+              <div>
+                <strong>Live</strong>
+                <span>Exchange rates</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel" id="converter">
+            <div class="panel-header">
+              <h3>Currency Converter</h3>
+              <span class="status-dot" id="api-status">Checking</span>
+            </div>
+
+            <div class="field-grid">
+              <label>
+                <span>From</span>
+                <select id="fromCurrency"></select>
+              </label>
+
+              <label>
+                <span>To</span>
+                <select id="toCurrency"></select>
+              </label>
+            </div>
+
+            <label class="amount-field">
+              <span>Amount</span>
+              <input id="amountInput" type="number" min="0.01" step="0.01" value="1000" />
+            </label>
+
+            <button id="convertBtn" class="primary-btn full">Convert</button>
+
+            <div class="result-box" id="resultBox">
+              <p class="result-label">Converted amount</p>
+              <h4 id="convertedValue">--</h4>
+              <p id="conversionMeta">Select currencies and click convert</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="bottom-grid">
+          <div class="panel currencies-panel">
+            <div class="panel-header">
+              <h3>Supported currencies</h3>
+            </div>
+            <div id="currencyList" class="currency-list"></div>
+          </div>
+
+          <div class="panel form-panel">
+            <div class="panel-header">
+              <h3>Create account</h3>
+            </div>
+
+            <form id="registerForm">
+              <label>
+                <span>Name</span>
+                <input type="text" id="name" name="name" placeholder="John Doe" required />
+              </label>
+              <label>
+                <span>Email</span>
+                <input type="email" id="email" name="email" placeholder="you@example.com" required />
+              </label>
+              <label>
+                <span>Password</span>
+                <input type="password" id="password" name="password" placeholder="At least 6 chars" required />
+              </label>
+              <button type="submit" class="secondary-btn full">Register</button>
+            </form>
+
+            <div id="registerMessage" class="message-box hidden"></div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="/app.js"></script>
+  </body>
+</html>

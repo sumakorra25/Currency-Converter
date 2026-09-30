@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register | Currency Flow</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="page-shell narrow">
+      <header class="topbar simple-header">
+        <div class="brand">
+          <div class="brand-mark">CF</div>
+          <div>
+            <p class="eyebrow">Member access</p>
+            <h1>Register</h1>
+          </div>
+        </div>
+        <nav class="nav-links">
+          <a href="/">Home</a>
+          <a href="/login">Login</a>
+        </nav>
+      </header>
+
+      <main class="panel auth-panel">
+        <form id="registerForm" class="auth-form">
+          <label>
+            <span>Name</span>
+            <input type="text" id="name" required />
+          </label>
+          <label>
+            <span>Email</span>
+            <input type="email" id="email" required />
+          </label>
+          <label>
+            <span>Password</span>
+            <input type="password" id="password" required />
+          </label>
+          <button type="submit" class="primary-btn full">Create Account</button>
+        </form>
+        <div id="registerMessage" class="message-box hidden"></div>
+      </main>
+    </div>
+
+    <script src="/auth.js"></script>
+  </body>
+</html>

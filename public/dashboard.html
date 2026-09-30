@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard | Currency Flow</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar simple-header">
+        <div class="brand">
+          <div class="brand-mark">CF</div>
+          <div>
+            <p class="eyebrow">User area</p>
+            <h1>Dashboard</h1>
+          </div>
+        </div>
+        <nav class="nav-links">
+          <a href="/">Home</a>
+          <button id="logoutBtn" class="secondary-btn">Logout</button>
+        </nav>
+      </header>
+
+      <main class="dashboard-layout">
+        <aside class="panel sidebar">
+          <h3>Profile</h3>
+          <div id="userProfile" class="profile-card">Loading...</div>
+
+          <h3>Quick actions</h3>
+          <div class="action-list">
+            <button class="secondary-btn full" data-tab="profile">User profile</button>
+            <button class="secondary-btn full" data-tab="convert">Convert amount</button>
+            <button class="secondary-btn full" data-tab="rates">Latest rates</button>
+            <button class="secondary-btn full" data-tab="currencies">Supported currencies</button>
+            <button class="secondary-btn full" data-tab="create-conversion">Create conversion</button>
+            <button class="secondary-btn full" data-tab="conversions">My conversions</button>
+            <button class="secondary-btn full" data-tab="create-pair">Create favourite pair</button>
+            <button class="secondary-btn full" data-tab="pairs">Favourite pairs</button>
+            <button class="secondary-btn full" data-tab="most-converted">Most converted pairs</button>
+          </div>
+        </aside>
+
+        <section class="panel content-panel">
+          <div id="dashboardContent"></div>
+        </section>
+      </main>
+    </div>
+
+    <script src="/dashboard.js"></script>
+  </body>
+</html>
